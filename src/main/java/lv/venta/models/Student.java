@@ -45,6 +45,7 @@ public class Student {
 	private String surname;
 	
 	@OneToMany(mappedBy = "student")
+	@ToString.Exclude// TO STRIN FUNKCIJA ŠO NEIZSAUKS, LAI NEAIZIET bezgalīgā ciklā
 	private Collection<Grade> grades; //Vairākas atzīmes vienam studentam
 
 	public Student(String name, String surname) {

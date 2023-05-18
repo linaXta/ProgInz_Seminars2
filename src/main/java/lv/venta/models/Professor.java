@@ -52,6 +52,7 @@ public class Professor {
 	private Degree degree;
 	
 	@OneToOne(mappedBy = "professor") //sasaistam ar otras klase mainīgo
+	@ToString.Exclude// TO STRIN FUNKCIJA ŠO NEIZSAUKS, LAI NEAIZIET bezgalīgā ciklā
 	private Course course;
 
 	public Professor(String name, String surname, Degree degree) {

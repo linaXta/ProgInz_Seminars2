@@ -16,7 +16,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
-@Table(name = "grade_table") //DB pusē izveidosies tabula
+@Table(name = "grade_table")
 @Entity
 @Getter
 @Setter

@@ -52,6 +52,7 @@ public class Course {
 	private Professor professor;
 	
 	@OneToMany(mappedBy = "course")
+	@ToString.Exclude// TO STRIN FUNKCIJA ŠO NEIZSAUKS, LAI NEAIZIET bezgalīgā ciklā
 	private Collection<Grade> grades;
 
 	public Course(String title, int creditPoint, Professor professor) {
