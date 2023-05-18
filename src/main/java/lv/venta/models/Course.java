@@ -53,6 +53,12 @@ public class Course {
 	
 	@OneToMany(mappedBy = "course")
 	private Collection<Grade> grades;
+
+	public Course(String title, int creditPoint, Professor professor) {
+		this.title = title;
+		this.creditPoint = creditPoint;
+		this.professor = professor;
+	}
 	
-	//TODO argumenkonstruktors, kad būs saite ar prfersru
+	
 }

@@ -41,8 +41,14 @@ public class Grade {
 	
 	@ManyToOne
 	@JoinColumn(name = "Idc")
-	private Course course; 
+	private Course course;
+
+	public Grade(int gradeValue, Student student, Course course) {
+		this.gradeValue = gradeValue;
+		this.student = student;
+		this.course = course;
+	} 
 	
-	//TODO izveidot konstruktoru
+	
 
 }
