@@ -36,8 +36,12 @@ public class Grade {
 	private int gradeValue;
 	
 	@ManyToOne
-	@JoinColumn(name = "Ids")
+	@JoinColumn(name = "Ids")// atzīme nevar pastāvēt bez studenta
 	private Student student; // vairākām atzīmēm viens īpašnieks
+	
+	@ManyToOne
+	@JoinColumn(name = "Idc")
+	private Course course; 
 	
 	//TODO izveidot konstruktoru
 
