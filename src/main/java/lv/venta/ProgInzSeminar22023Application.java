@@ -49,7 +49,6 @@ public class ProgInzSeminar22023Application {
 				grRepo.save(new Grade(6, st2, c1));
 				grRepo.save(new Grade(5, st2, c2));
 				
-				//TODO izveidot jaunu zaru un pāriet uz to(git branch xxx, git checkout xxx)
 				//TODO pārveidot saiti starp professor un kursu uz ManyToMany
 				//TODO pamainīt testMode funkciju 1.professoram 2 kursus un 1.kurasm, ka to pasniedz abi profesori
 				
