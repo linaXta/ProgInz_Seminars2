@@ -8,39 +8,31 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.Max;
 import jakarta.validation.constraints.Min;
-import jakarta.validation.constraints.NotNull;
-import jakarta.validation.constraints.Pattern;
-import jakarta.validation.constraints.Size;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
-@Table(name = "course_table")
+@Table(name = "grade_table") //DB pusē izveidosies tabula
 @Entity
 @Getter
 @Setter
 @NoArgsConstructor
 @ToString
-public class Course {
-
+public class Grade {
+	
 	@Setter(value = AccessLevel.NONE)
-	@Column(name = "Idc") 
+	@Column(name = "Idg") 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private long idc;
+	private long idg;
 	
-	@Column(name = "Title")
-	@NotNull
-	@Pattern(regexp = "[A-ZĀĢČĒĪĶĻŅŠŪŽ]{1}[a-zāģčēīķļņšūž\\ ]+")
-	@Size(min = 5, max = 30)
-	private String title;
-	
-	@Column(name = "CreditPoint")
+	@Column(name = "GradeValue")
 	@Min(value = 1)
-	@Max(value = 20)
-	private int creditPoint;
+	@Max(value = 10)
+	private int gradeValue;
 	
-	//TODO argumenkonstruktors, kad būs saite ar prfersru
+	//TODO izveidot konstruktoru
+
 }
