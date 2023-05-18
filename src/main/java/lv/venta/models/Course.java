@@ -39,7 +39,7 @@ public class Course {
 	@Column(name = "Title")
 	@NotNull
 	@Pattern(regexp = "[A-ZĀĢČĒĪĶĻŅŠŪŽ]{1}[a-zāģčēīķļņšūž\\ ]+")
-	@Size(min = 5, max = 30)
+	@Size(min = 4, max = 30)
 	private String title;
 	
 	@Column(name = "CreditPoint")
