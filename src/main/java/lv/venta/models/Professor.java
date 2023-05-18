@@ -5,6 +5,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
@@ -26,11 +27,8 @@ import lombok.ToString;
 public class Professor {
 	
 	
-	//TODO uzlikt Data JPA anotācijas (@Colum utt)
-	//TODO uzlikt atbilstošās validācijas
-
-	//TODO izveidot Cours klasi
-	//TODO izveidot Grade klasi
+	// uzlikt Data JPA anotācijas (@Colum utt)
+	// uzlikt atbilstošās validācijasi
 	@Setter(value = AccessLevel.NONE)
 	@Column(name = "Idp") 
 	@Id
@@ -52,6 +50,9 @@ public class Professor {
 	@Column(name = "Degree")
 	@NotBlank
 	private Degree degree;
+	
+	@OneToOne(mappedBy = "professor") //sasaistam ar otras klase mainīgo
+	private Course course;
 
 	public Professor(String name, String surname, Degree degree) {
 		super();
