@@ -56,6 +56,7 @@ public class Professor {
 	private Degree degree;
 	
 	@ManyToMany(mappedBy = "professors")
+	@ToString.Exclude
 	private Collection<Course> courses = new ArrayList<>();
 
 	public Professor(String name, String surname, Degree degree) {
