@@ -28,28 +28,8 @@ import lombok.ToString;
 @Setter
 @NoArgsConstructor
 @ToString
-public class Professor {
-	
-	
-	// uzlikt Data JPA anotācijas (@Colum utt)
-	// uzlikt atbilstošās validācijasi
-	@Setter(value = AccessLevel.NONE)
-	@Column(name = "Idp") 
-	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	private long idp;
-	
-	@Column(name = "Name")
-	@NotNull
-	@Pattern(regexp = "[A-ZĀĢČĒĪĶĻŅŠŪŽ]{1}[a-zāģčēīķļņšūž\\ ]+")
-	@Size(min = 3, max = 15)
-	private String name;
-	
-	@Column(name = "Surname")
-	@NotNull
-	@Pattern(regexp = "[A-ZĀĢČĒĪĶĻŅŠŪŽ]{1}[a-zāģčēīķļņšūž\\ ]+")
-	@Size(min = 3, max = 15)
-	private String surname;
+public class Professor extends Person {
+
 	
 	@Column(name = "Degree")
 	@NotNull
@@ -60,9 +40,7 @@ public class Professor {
 	private Collection<Course> courses = new ArrayList<>();
 
 	public Professor(String name, String surname, Degree degree) {
-		super();
-		this.name = name;
-		this.surname = surname;
+		super(name, surname);
 		this.degree = degree;
 	}
 	

@@ -24,33 +24,16 @@ import lombok.ToString;
 @Setter
 @NoArgsConstructor
 @ToString
-public class Student {
+public class Student extends Person{
 	
-	@Setter(value = AccessLevel.NONE)
-	@Column(name = "Ids") 
-	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	private long ids;
 	
-	@Column(name = "Name")
-	@NotNull
-	@Pattern(regexp = "[A-ZĀĢČĒĪĶĻŅŠŪŽ]{1}[a-zāģčēīķļņšūž\\ ]+")
-	@Size(min = 3, max = 15)
-	private String name;
-	
-	@Column(name = "Surname")
-	@NotNull
-	@Pattern(regexp = "[A-ZĀĢČĒĪĶĻŅŠŪŽ]{1}[a-zāģčēīķļņšūž\\ ]+")
-	@Size(min = 3, max = 15)
-	private String surname;
 	
 	@OneToMany(mappedBy = "student")
 	@ToString.Exclude// TO STRIN FUNKCIJA ŠO NEIZSAUKS, LAI NEAIZIET bezgalīgā ciklā
 	private Collection<Grade> grades; //Vairākas atzīmes vienam studentam
 
 	public Student(String name, String surname) {
-		this.name = name;
-		this.surname = surname;
+		super(name, surname);
 	}
 	
 	
