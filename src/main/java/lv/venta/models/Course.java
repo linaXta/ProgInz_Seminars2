@@ -51,9 +51,6 @@ public class Course {
 	@Max(value = 20)
 	private int creditPoint;
 	
-	@OneToOne
-	@JoinColumn(name = "Idp") //sasaistam ar otras klases PK
-	private Professor professor;
 	
 	@ManyToMany
 	@JoinTable(name = "course_prof_table", joinColumns = @JoinColumn(name ="Idp"), inverseJoinColumns = @JoinColumn(name = "Idc") )

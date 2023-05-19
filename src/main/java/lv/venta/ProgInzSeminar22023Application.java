@@ -39,6 +39,8 @@ public class ProgInzSeminar22023Application {
 				stRepo.save(st1);
 				stRepo.save(st2);
 				
+				//TODO Uztaisīt kursu, kam ir divi profesori
+				//TODO Uztaisīt gadījumu, kad viens profesors pasniedz divus kursus
 				Course c1 = new Course("Java", 4, pr1);
 				Course c2 = new Course("Datubāzes", 4, pr2);
 				crRepo.save(c1);
