@@ -29,10 +29,7 @@ import lombok.ToString;
 @NoArgsConstructor
 @ToString
 public class Professor {
-	
-	
-	// uzlikt Data JPA anotācijas (@Colum utt)
-	// uzlikt atbilstošās validācijasi
+
 	@Setter(value = AccessLevel.NONE)
 	@Column(name = "Idp") 
 	@Id
@@ -60,7 +57,6 @@ public class Professor {
 	private Collection<Course> courses = new ArrayList<>();
 
 	public Professor(String name, String surname, Degree degree) {
-		super();
 		this.name = name;
 		this.surname = surname;
 		this.degree = degree;
